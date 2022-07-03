@@ -2,7 +2,7 @@ import { Box, Button, Stack, styled, Typography } from "@mui/material";
 import React from "react";
 import Image from "../assets/me.jpg";
 import { theme } from "../theme/theme.js";
-import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+import { Github, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 import { MotionInView, varFadeInUp, varZoomIn, varRotateIn } from "../animate";
 
 const container = {
@@ -86,13 +86,13 @@ function AboutDeveloper() {
           <Stack direction="row" spacing={2}>
             <MotionInView variants={varRotateIn}>
               <a
-                href=""
+                href="https://github.com/UneeqDev"
                 rel="noreferrer"
                 style={{ textDecoration: "none" }}
                 target="_blank"
               >
                 <Box sx={iconStyle}>
-                  <Facebook sx={{ color: "#010411" }} />
+                  <Github sx={{ color: "#010411" }} />
                 </Box>
               </a>
             </MotionInView>
