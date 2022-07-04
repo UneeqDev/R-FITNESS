@@ -2,7 +2,7 @@ import { Box, Button, Stack, styled, Typography } from "@mui/material";
 import React from "react";
 import Image from "../assets/me.jpg";
 import { theme } from "../theme/theme.js";
-import { Github, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+import { GitHub, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 import { MotionInView, varFadeInUp, varZoomIn, varRotateIn } from "../animate";
 
 const container = {
@@ -92,7 +92,7 @@ function AboutDeveloper() {
                 target="_blank"
               >
                 <Box sx={iconStyle}>
-                  <Github sx={{ color: "#010411" }} />
+                  <GitHub sx={{ color: "#010411" }} />
                 </Box>
               </a>
             </MotionInView>
@@ -101,6 +101,7 @@ function AboutDeveloper() {
                 href="https://twitter.com/UneeqDev"
                 style={{ textDecoration: "none" }}
                 target="_blank"
+                rel="noreferrer"
               >
                 <Box sx={iconStyle}>
                   <Twitter sx={{ color: "#010411" }} />
@@ -108,14 +109,24 @@ function AboutDeveloper() {
               </a>
             </MotionInView>
             <MotionInView variants={varRotateIn}>
-              <a href="" style={{ textDecoration: "none" }} target="_blank">
+              <a
+                href="https://instagram.com/uneeqdev/"
+                style={{ textDecoration: "none" }}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Box sx={iconStyle}>
                   <Instagram sx={{ color: "#010411" }} />
                 </Box>
               </a>
             </MotionInView>
             <MotionInView variants={varRotateIn}>
-              <a href="" style={{ textDecoration: "none" }} target="_blank">
+              <a
+                href="https://linkedin.com/mwlite/In/uneeqdev"
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: "none" }}
+              >
                 <Box sx={iconStyle}>
                   <LinkedIn sx={{ color: "#010411" }} />
                 </Box>

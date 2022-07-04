@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { exerciseOptions, fetchData } from "../utills/fetchData";
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import HorizontalScrollbar from "./HorizontalScrollbar";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useStateValue } from "../context/StateProvider";
 import { useNavigate } from "react-router-dom";
 import { MotionInView, varFadeInUp } from "../animate";
-import { Link as ScrollLink } from "react-scroll";
+
 const container = {
   width: "100vw",
   height: "auto",
@@ -29,23 +21,21 @@ function Search() {
   const [search, setSearch] = useState("");
 
   //----All Body Parts Categories
-  const [bodyParts, setBodyParts] = useState([]);
-  const [termExists, setTermExists] = useState(false);
-
+  // const [bodyParts, setBodyParts] = useState([]);
   //----from the data layer StateProvider
-  const { exercises, setExercises } = useStateValue();
+  const { setExercises } = useStateValue();
 
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-        exerciseOptions
-      );
-      setBodyParts(["all", ...bodyPartsData]);
-    };
-    fetchExercisesData();
-    console.log(bodyParts);
-  }, []);
+  // useEffect(() => {
+  //   const fetchExercisesData = async () => {
+  //     const bodyPartsData = await fetchData(
+  //       "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+  //       exerciseOptions
+  //     );
+  //     setBodyParts(["all", ...bodyPartsData]);
+  //   };
+  //   fetchExercisesData();
+  //   console.log(bodyParts);
+  // }, [bodyParts]);
 
   const handleChange = (e) => {
     setSearch(e.target.value.toLowerCase());
@@ -130,38 +120,6 @@ function Search() {
           </Stack>
         </Stack>
       </MotionInView>
-      {/* -----exclusive class container ---- */}
-      {/* <Box
-        sx={{
-          display: "flex",
-          height: "50vh",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100vw ",
-          padding: "0 1rem",
-          position: "relative",
-
-          justifyContent: "center",
-          backgroundColor: "pink",
-        }}
-      >
-        <Typography
-          variant="h5"
-          color="primary"
-          sx={{
-            fontWeight: "600",
-            fontSize: { sm: "24px", xs: "20px" },
-            display: "flex",
-            justifyContent: "center",
-          }}
-          mt={3}
-        >
-          Explore Our All Inclusive <br />
-          Exercises
-        </Typography>
-
-        <HorizontalScrollbar data={bodyParts} />
-      </Box> */}
     </Box>
   );
 }

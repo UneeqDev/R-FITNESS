@@ -38,7 +38,6 @@ const SubSection = {
   marginTop: "1rem",
   display: "flex",
   flexDirection: { sm: "row", xs: "column" },
-  marginTop: "2rem",
 };
 
 const AboutContainer = {
@@ -211,10 +210,10 @@ function Footer() {
                 <Stack direction="row" spacing={2} mt={3}>
                   <MotionInView variants={varRotateIn}>
                     <a
-                      href=""
+                      href="https://facebook.com/Unique"
                       style={{ textDecoration: "none" }}
                       target="_blank"
-                      rel="norefferer"
+                      rel="noreferrer"
                     >
                       <Box sx={iconStyle}>
                         <Facebook sx={{ color: "white" }} />
@@ -226,7 +225,7 @@ function Footer() {
                       href="https://twitter.com/UneeqDev"
                       style={{ textDecoration: "none" }}
                       target="_blank"
-                      rel="norefferer"
+                      rel="noreferrer"
                     >
                       <Box sx={iconStyle}>
                         <Twitter sx={{ color: "white" }} />
@@ -235,10 +234,10 @@ function Footer() {
                   </MotionInView>
                   <MotionInView variants={varRotateIn}>
                     <a
-                      href=""
+                      href="https://Instagram.com/uneeqdev"
                       style={{ textDecoration: "none" }}
                       target="_blank"
-                      rel="norefferer"
+                      rel="noreferrer"
                     >
                       <Box sx={iconStyle}>
                         <Instagram sx={{ color: "white" }} />

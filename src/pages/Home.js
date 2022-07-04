@@ -1,4 +1,3 @@
-import { AbcOutlined } from "@mui/icons-material";
 import React from "react";
 import About from "../components/About";
 import Challenge from "../components/Challenge";

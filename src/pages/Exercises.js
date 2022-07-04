@@ -42,8 +42,7 @@ const LinkStyle = styled(Link)({
   color: "white",
 });
 function Exercises() {
-  const { exercises, handleChange, search, handleSearch, showSearch } =
-    useStateValue();
+  const { exercises, handleChange, search, handleSearch } = useStateValue();
 
   // Pagination
 
@@ -62,58 +61,6 @@ function Exercises() {
     window.scrollTo({ top: 2000, behavior: "smooth" });
   };
 
-  // if (showSearch) {
-  //   return (
-  //     <Box
-  //       sx={{
-  //         marginTop: "3rem",
-  //         width: "100vw",
-  //         display: "flex",
-  //         alignItems: "center",
-  //         justifyContent: "center",
-  //         flexDirection: "column",
-  //       }}
-  //     >
-  //       <Stack direction="row" mt={4} mb={2}>
-  //         <TextField
-  //           sx={{
-  //             input: {
-  //               fontWeight: "700",
-  //             },
-  //             root: {
-  //               border: "none",
-  //               outline: "none",
-  //               "&: focus": {
-  //                 border: "none",
-  //               },
-  //             },
-  //             width: { lg: "500px", md: "350px", xs: "250px" },
-  //             backgroundColor: "white",
-  //             border: "none",
-  //             outline: "none",
-  //             "&: focus": {
-  //               border: "none",
-  //             },
-  //           }}
-  //           height="50px"
-  //           value={search}
-  //           placeholder="search your favorite workouts..."
-  //           type="text"
-  //           onChange={handleChange}
-  //         />
-  //         <Button
-  //           variant="contained"
-  //           size="small"
-  //           type="text"
-  //           sx={{ padding: "5px 10px" }}
-  //           onClick={handleSearch}
-  //         >
-  //           Search
-  //         </Button>
-  //       </Stack>
-  //     </Box>
-  //   );
-  // }
   if (!currentExercises.length) {
     return (
       <>
