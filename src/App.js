@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import { Box } from "@mui/material";
+import Footer from "./components/Footer";
+import PageNotFound from "./pages/PageNotFound";
+import { AddReaction } from "@mui/icons-material";
+import Loader from "./components/Loader";
+const LazyExerciseDetails = React.lazy(() => import("./pages/ExerciseDetails"));
+const LazyExercises = React.lazy(() => import("./pages/Exercises"));
+const LazyAboutDeveloper = React.lazy(() => import("./pages/AboutDeveloper"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/exercises"
+          element={
+            <React.Suspense fallback={<Loader />}>
+              <LazyExercises />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/exercises/:id"
+          element={
+            <React.Suspense fallback={<Loader />}>
+              <LazyExerciseDetails />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/aboutdeveloper"
+          element={
+            <React.Suspense fallback={<Loader />}>
+              <LazyAboutDeveloper />
+            </React.Suspense>
+          }
+        />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </Box>
   );
 }
 
