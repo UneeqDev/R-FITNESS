@@ -25,19 +25,8 @@ const DataProvider = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   //for search
 
-  //for bodypartlist
-
   useEffect(() => {
-    // const fetchExercisesData = async () => {
     setLoading(false);
-    //   const bodyPartsData = await fetchData(
-    //     "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-    //     exerciseOptions
-    //   );
-    //   setBodyParts(["all", ...bodyPartsData]);
-    // };
-    // fetchExercisesData();
-    // console.log(bodyParts);
   }, []);
 
   const handleChange = (e) => {
@@ -66,6 +55,7 @@ const DataProvider = ({ children }) => {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <DataContext.Provider
       value={{
@@ -76,7 +66,7 @@ const DataProvider = ({ children }) => {
         handleChange,
         handleSearch,
         search,
-        // bodyParts,
+        loading,
         showSearch,
         setShowSearch,
       }}

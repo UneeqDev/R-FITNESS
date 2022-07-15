@@ -20,23 +20,10 @@ function Search() {
   //----saves search element in this state
   const [search, setSearch] = useState("");
 
-  //----All Body Parts Categories
-  // const [bodyParts, setBodyParts] = useState([]);
-  //----from the data layer StateProvider
+
   const { setExercises } = useStateValue();
 
-  // useEffect(() => {
-  //   const fetchExercisesData = async () => {
-  //     const bodyPartsData = await fetchData(
-  //       "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-  //       exerciseOptions
-  //     );
-  //     setBodyParts(["all", ...bodyPartsData]);
-  //   };
-  //   fetchExercisesData();
-  //   console.log(bodyParts);
-  // }, [bodyParts]);
-
+  
   const handleChange = (e) => {
     setSearch(e.target.value.toLowerCase());
   };

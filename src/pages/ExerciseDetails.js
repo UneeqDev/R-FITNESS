@@ -21,20 +21,23 @@ const ExerciseDetails = () => {
       //exercisedburl and youtubeSearchdbUrl
       const exerciseDbUrl = "https://exercisedb.p.rapidapi.com";
       // const youTubeSearchUrl =
-      //   "https://youtube-search-and-download.p.rapidapi.com/v";
+      //   "https://youtube-search-and-download.p.rapidapi.com";
+
       //fetching each exercise detail data
       const exerciseDetailData = await fetchData(
         `${exerciseDbUrl}/exercises/exercise/${id}`,
         exerciseOptions
       );
       setExerciseDetail(exerciseDetailData);
-      // //fetching each exercise video data using the exerciseDetailname as the search query
+
+      //fetching each exercise video data using the exerciseDetailname as the search query
       // const exerciseVideosData = await fetchData(
-      //   `${youTubeSearchUrl}/search?query=${exerciseDetailData.name} exercise`,
+      //   `${youTubeSearchUrl}/search?query=${exerciseDetailData.name}`,
       //   youtubeOptions
       // );
 
-      // setExerciseVideos(exerciseVideosData.contents);
+      // setExerciseVideos(exerciseVideosData);
+      // console.log(exerciseVideos);
     };
     fetchExercisesData();
   }, [id]);
@@ -45,7 +48,8 @@ const ExerciseDetails = () => {
         <Detail exerciseDetail={exerciseDetail} />
         {/* <ExerciseVideos
           exerciseVideos={exerciseVideos}
-          name={exerciseDetail.name} */}
+          name={exerciseDetail.name}
+        /> */}
       </Box>
     </>
   );

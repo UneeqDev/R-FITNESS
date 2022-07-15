@@ -6,9 +6,11 @@ import Sidebar from "./Sidebar";
 import WidgetsIcon from "@mui/icons-material/Widgets";
 import { Cancel } from "@mui/icons-material";
 import { MotionInView, varZoomIn } from "../animate";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [sideNav, setSideNav] = useState(false);
+  const navigate = useNavigate();
   const sideNavToggler = () => {
     setSideNav((prev) => !prev);
   };
@@ -21,7 +23,11 @@ function Navbar() {
             <Typography variant="h3" color="secondary">
               R
             </Typography>
-            <Typography variant="p" sx={{ fontWeight: "bold", color: "white" }}>
+            <Typography
+              variant="p"
+              sx={{ fontWeight: "bold", color: "white" }}
+              onClick={() => navigate("/")}
+            >
               Fitness
             </Typography>
           </Stack>
@@ -36,26 +42,6 @@ function Navbar() {
                 <Cancel sx={{ cursor: "pointer" }} onClick={sideNavToggler} />
               </MotionInView>
             )}
-            {/* <Link style={{ color: "white", textDecoration: "none" }} to="/">
-              <Typography variant="p" fontSize="20px">
-                Home
-              </Typography>
-            </Link>
-            <ScrollLink
-              style={{
-                color: "white",
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-              to="search"
-              spy={true}
-              duration={1000}
-              smooth={true}
-            >
-              <Typography variant="p" fontSize="20px">
-                Exercises
-              </Typography>
-            </ScrollLink> */}
           </Stack>
         </Toolbar>
       </AppBar>

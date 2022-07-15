@@ -148,7 +148,7 @@ function AboutDeveloper() {
 
             <Typography
               variant="p"
-              sx={{ fontSize: { md: "19px", sm: "18px", xs: "17px" } }}
+              sx={{ fontSize: { md: "17", sm: "17px", xs: "16px" } }}
             >
               I am an innovative <b>frontend developer</b> with 4 months
               experience building and maintaining responsive websites. I am

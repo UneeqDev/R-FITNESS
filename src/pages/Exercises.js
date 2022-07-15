@@ -10,6 +10,7 @@ import {
   styled,
   TextField,
   Typography,
+  Skeleton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 // import Image from "../assets/SadHeart.png";
@@ -42,7 +43,8 @@ const LinkStyle = styled(Link)({
   color: "white",
 });
 function Exercises() {
-  const { exercises, handleChange, search, handleSearch } = useStateValue();
+  const { exercises, handleChange, search, handleSearch, loading } =
+    useStateValue();
 
   // Pagination
 
@@ -112,14 +114,6 @@ function Exercises() {
             </Button>
           </Stack>
 
-          {/* <Stack direction="column">
-            <img
-              src={Image}
-              style={{ width: "300px", height: "300px" }}
-              alt="oops"
-            />
-          </Stack> */}
-
           <Alert severity="info">
             Type in a valid search term in the search box such as exercise name,
             body part, target muscle or equipment.
@@ -185,11 +179,20 @@ function Exercises() {
             >
               <Box sx={card}>
                 <LinkStyle to={`/exercises/${exercise.id}`}>
-                  <ImgStyle
-                    src={exercise.gifUrl}
-                    alt={exercise.name}
-                    loading="lazy"
-                  />
+                  {loading ? (
+                    <Skeleton
+                      variant="rectangular"
+                      width={210}
+                      height={118}
+                      animation="wave"
+                    />
+                  ) : (
+                    <ImgStyle
+                      src={exercise.gifUrl}
+                      alt={exercise.name}
+                      loading="lazy"
+                    />
+                  )}
                   <Stack direction="column">
                     <Stack direction="row" spacing={1} pl={1}>
                       <Typography
